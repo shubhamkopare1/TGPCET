@@ -20,16 +20,7 @@ const Footer = () => {
 
           Tulsiramji Gaikwad Patil College of Engineering and Technology, Nagpur
         </p>
-        <div className="flex justify-center space-x-6 mt-4">
-    
-          <a href="https://www.instagram.com/it_tgpcet/" target="_blank" rel="noopener noreferrer">
-            <FaInstagram className="text-gray-400 hover:text-pink-500 text-2xl" />
-          </a>
-          <a href="http://youtube.com/@tgpcetinformationtechnolog8192" target="_blank" rel="noopener noreferrer">
-            <FaYoutube className="text-gray-400 hover:text-red-500 text-2xl" />
-          </a>
-        
-        </div>
+     
         {/* Copyright */}
         
         <p class="text-gray-500 text-xs">
@@ -42,7 +33,7 @@ const Footer = () => {
           </span>{" "} */}
         </p>
         <p className="text-gray-500 text-sm ">
-          contact :<span class="text-cyan-400 font-semibold">8485029672 & </span>{" "}
+          contact :<span class="text-cyan-400 font-semibold">8485029672 </span>{" "}
         </p>
       </div>
     </footer>

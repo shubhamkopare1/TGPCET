@@ -1,6 +1,7 @@
 import React from "react";
 
 const supportTeam = [
+
   {
     id: 3,
     name: "Shubham Kopare",
@@ -16,12 +17,20 @@ const supportTeam = [
     phone: "+91 9158396794"
   },
   {
+    id: 4,
+    name: "Yash Gaidhane",
+    role: "Technical Support",
+    email: "gaidhane9@gmail.com",
+    phone: "+91 9322586899"
+  },
+  {
     id: 2,
     name: "Himanshu Dhenge",
     role: "Technical Support",
     email: "himanshudhenge4@gmail.com",
     phone: "+91 9322913858"
   },
+ 
  
 ];
 

@@ -64,7 +64,7 @@ const ProblemForm = () => {
               value={formData.problemCode}
               onChange={handleChange}
               className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-100 placeholder-gray-400 transition-all"
-              placeholder="e.g., TGPDS1"
+              placeholder="e.g., TGP1"
             />
           </div>
 

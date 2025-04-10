@@ -4,12 +4,12 @@ import { useNavigate } from "react-router-dom";
 const events = [
   {
     id: 1,
-    title: "WEB CRAFT (UI/UX)",
+    title: "Hackathon 2K25",
     description:
-      "Showcase your creativity and design intuitive user experiences in this ultimate UI/UX competition.",
-    img: "WEB CARFT[2].png",
-    entryFee: 120,
-    date: "5 April 2025",
+      "Where Innovation Meets Execution!",
+    img: "hack2.jpg",
+    entryFee: 200,
+    date: "19 April 2025",
     time:"10:00 AM - 4:00 PM",
     location: "TGPCET,Nagpur",
     registrationLink: "https://forms.gle/Di2Gcrgf5UAirkTV6",
@@ -20,8 +20,8 @@ const events = [
     description:
       "Solve Real-World Problems with Innovative Solutions",
     img: "IMG_2045[2].png",
-    entryFee: "Free",
-    date: "5 April 2025",
+    entryFee: "200",
+    date: "17 April 2025",
     time:"10:00 AM - 4:00 PM",
     location: "TGPCET,Nagpur",
   },

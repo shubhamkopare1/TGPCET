@@ -103,18 +103,20 @@ const EventInfo = () => {
         <h1 className="font-bold text-4xl sm:text-5xl mb-3 md:text-6xl bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent">
           {event.title}
         </h1>
+        
         {event.tagline && (
           <p className="text-gray-300 text-md sm:text-lg mt-2">
             🚀 <strong>{event.tagline}</strong>
           </p>
         )}
-        {event.tagline && (
-          <p className="text-gray-300 text-md sm:text-lg mt-2 px-2 sm:px-0">
-            💡 Join a high-energy <strong>7-hour coding marathon</strong> where top minds solve{" "}
-            <strong>real-world challenges</strong>, compete with <strong>elite developers</strong>, and{" "}
-            <strong>showcase their skills</strong> for exciting rewards!
-          </p>
-        )}
+       {event.id === 1 && event.tagline && (
+  <p className="text-gray-300 text-md sm:text-lg mt-2 px-2 sm:px-0">
+    💡 Join a high-energy <strong>6-hour coding marathon</strong> where top minds solve{" "}
+    <strong>real-world challenges</strong>, compete with <strong>elite developers</strong>, and{" "}
+    <strong>showcase their skills</strong> for exciting rewards!
+  </p>
+)}
+
       </div>
 
       {/* Event Details */}
