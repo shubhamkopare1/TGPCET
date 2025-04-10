@@ -42,7 +42,7 @@ const Navbar = () => {
     { name: "Ideathon", path: "/event/2", icon: <Rocket size={18} /> },
     { name: "About", path: "/about", icon: <Info size={18} /> },
     { name: "Contact Us", path: "/contact", icon: <Contact size={18} /> },
-    //  { name: "Register problem", path: "/ProblemForm", icon: <Code2 size={18} /> },
+     { name: "Register problem", path: "/ProblemForm", icon: <Code2 size={18} /> },
     
     { name: "Sponsor", path: "/sponsor", icon: <Trophy size={18} /> },
   ];
@@ -61,8 +61,8 @@ const Navbar = () => {
   return (
     <>
       {/* Navbar */}
-      <nav className=" sticky top-0 w-full bg-black  border-b-[3px] border-cyan-500/50 shadow-lg shadow-cyan-500/20 z-[9999] pb-4 animate-border">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 py-4 flex justify-between items-center">
+      <nav className=" sticky top-0 w-full bg-black  border-b-[3px] border-cyan-500/50 shadow-lg shadow-cyan-500/20 z-[9999] animate-border">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 py-4 flex justify-between items-center ">
           {/* Logo */}
           <motion.div whileHover={{ scale: 1.05 }} className="flex items-center space-x-3">
             <div className="p-2 bg-gradient-to-tr from-cyan-500 to-purple-600 rounded-lg shadow-lg">
