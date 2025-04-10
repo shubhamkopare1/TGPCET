@@ -19,7 +19,7 @@ const events = [
     title: "IDEATHON",
     description:
       "Solve Real-World Problems with Innovative Solutions",
-    img: "IMG_2045[2].png",
+    img: "Your paragraph text.jpg",
     entryFee: "200",
     date: "17 April 2025",
     time:"10:00 AM - 4:00 PM",

@@ -42,7 +42,7 @@ const Navbar = () => {
     { name: "Ideathon", path: "/event/2", icon: <Rocket size={18} /> },
     { name: "About", path: "/about", icon: <Info size={18} /> },
     { name: "Contact Us", path: "/contact", icon: <Contact size={18} /> },
-     { name: "Register problem", path: "/ProblemForm", icon: <Code2 size={18} /> },
+    //  { name: "Register problem", path: "/ProblemForm", icon: <Code2 size={18} /> },
     
     { name: "Sponsor", path: "/sponsor", icon: <Trophy size={18} /> },
   ];

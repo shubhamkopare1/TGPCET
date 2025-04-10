@@ -5,11 +5,11 @@ const Footer = () => {
   return (
     <footer className="relative bg-gradient-to-r from-[#0D1117] to-[#1A1F2B]  text-white py-4 px-6 text-center">
       {/* Floating Robot */}
-      <img
+      {/* <img
         src="/robot.png" // Update with your image path
         alt="Robot"
         className="absolute top-[-50px] left-1/2 transform -translate-x-1/2 w-28 animate-bounce"
-      />
+      /> */}
       <h2 className="text-base sm:text-lg font-semibold text-cyan-400 uppercase">
         Hackathon & Ideathon
       </h2>
