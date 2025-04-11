@@ -51,9 +51,8 @@ const events = [
     venue: "TGPCET Campus",
     entryFee: "₹200 per group (Max. 4 members) ",
     entryFees: "₹300 per group (Max. 5 or 6 members) ",
-   
+    registrationLink: "https://forms.gle/SNxLWYtXRzdvnB2j9",
     prizePool: "₹50,000+",
-    registrationLink: "",
     themes: [
       "Sustainability",
       "Artificial Intelligence",

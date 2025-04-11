@@ -24,6 +24,7 @@ const events = [
     date: "17 April 2025",
     time:"10:00 AM - 4:00 PM",
     location: "TGPCET,Nagpur",
+    registrationLink: "https://forms.gle/SNxLWYtXRzdvnB2j9",
   },
 ];
 
