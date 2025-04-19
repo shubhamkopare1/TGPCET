@@ -6,7 +6,7 @@ const events = [
     id: 1,
     title: "Hackathon 2K25",
     tagline: "Where Innovation Meets Execution!",
-    date: "19th April, 2025",
+    date: "26th April, 2025",
     time: "10:00 AM - 4:00 PM",
     venue: "TGPCET Campus",
     entryFee: "₹200 per group (Max. 4 members) ",
@@ -46,7 +46,7 @@ const events = [
     id: 2,
     title: "Ideathon", // Fixed key from `name` to `title`
     tagline: "Shape the Future With Your Ideas",
-    date: "17th April 2025",
+    date: "26th April 2025",
     time: "10:00 AM - 4:00 PM",
     venue: "TGPCET Campus",
     entryFee: "₹200 per group (Max. 4 members) ",
