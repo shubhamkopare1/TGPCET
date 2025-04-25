@@ -15,7 +15,7 @@ const About = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           <div className="bg-gradient-to-br from-black via-gray-900 to-gray-800 rounded-xl p-6 border border-cyan-500/30">
             <h3 className="text-2xl font-bold text-cyan-400 mb-2">Hackathon</h3>
-            <p className="text-gray-300 mb-2">📅 <span className="text-white font-semibold">19th April 2025</span></p>
+            <p className="text-gray-300 mb-2">📅 <span className="text-white font-semibold">26th April 2025</span></p>
             <p className="text-sm mb-3 text-gray-400">A 6-hour coding marathon.</p>
             <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
               <li>AI & Emerging Trends</li>
@@ -28,7 +28,7 @@ const About = () => {
 
           <div className="bg-gradient-to-br from-black via-gray-900 to-gray-800 rounded-xl p-6 border border-cyan-500/30">
             <h3 className="text-2xl font-bold text-cyan-400 mb-2">Ideathon</h3>
-            <p className="text-gray-300 mb-2">📅 <span className="text-white font-semibold">17th April 2025</span></p>
+            <p className="text-gray-300 mb-2">📅 <span className="text-white font-semibold">26th April 2025</span></p>
             <p className="text-sm mb-3 text-gray-400">Shape the future with your ideas.</p>
             <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
               <li>Sustainability</li>
