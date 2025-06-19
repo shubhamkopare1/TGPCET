@@ -1,27 +1,45 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Rocket, LogIn, LogOut, Code2, Home, Contact, Info, Trophy } from "lucide-react";
+import {
+  Menu,
+  X,
+  Rocket,
+  LogIn,
+  LogOut,
+  Code2,
+  Home,
+  Contact,
+  Info,
+  Trophy,
+} from "lucide-react";
+import { jwtDecode } from "jwt-decode";
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [role, setRole] = useState(null);
 
-  // Toggle authentication state
-  const toggleAuth = () => {
-    setIsAuthenticated((prev) => !prev);
-  };
   const checkAuthStatus = () => {
     const token = localStorage.getItem("token");
-    console.log(token);
-    
-    setIsAuthenticated(token);
+    setIsAuthenticated(!!token);
+
+    if (token) {
+      try {
+        const decoded = jwtDecode(token);
+        setRole(decoded.role); // Make sure token has a `role` field
+      } catch (error) {
+        console.error("Invalid token", error);
+        setRole(null);
+      }
+    } else {
+      setRole(null);
+    }
   };
 
   useEffect(() => {
-    checkAuthStatus(); // Initial check
-
-    // Listen for login/logout changes
+    checkAuthStatus();
     const handleStorageChange = () => checkAuthStatus();
     window.addEventListener("storage", handleStorageChange);
 
@@ -33,8 +51,8 @@ const Navbar = () => {
   const handleLogout = () => {
     localStorage.removeItem("token");
     setIsAuthenticated(false);
+    setRole(null);
   };
-
 
   const navLinks = [
     { name: "Home", path: "/", icon: <Home size={18} /> },
@@ -42,17 +60,18 @@ const Navbar = () => {
     { name: "Ideathon", path: "/event/2", icon: <Rocket size={18} /> },
     { name: "About", path: "/about", icon: <Info size={18} /> },
     { name: "Contact Us", path: "/contact", icon: <Contact size={18} /> },
-     { name: "Register problem", path: "/ProblemForm", icon: <Code2 size={18} /> },
-    
+    { name: "Register problem", path: "/ProblemForm", icon: <Code2 size={18} /> },
+    ...(role === "admin"
+      ? [
+          { name: "participants", path: "/Participantlist", icon: <Code2 size={18} /> },
+          { name: "Repos", path: "/repos", icon: <Code2 size={18} /> },
+        ]
+      : []),
     { name: "Sponsor", path: "/sponsor", icon: <Trophy size={18} /> },
   ];
 
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+    document.body.style.overflow = isOpen ? "hidden" : "auto";
     return () => {
       document.body.style.overflow = "auto";
     };
@@ -60,29 +79,25 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Navbar */}
-      <nav className=" sticky top-0 w-full bg-black  border-b-[3px] border-cyan-500/50 shadow-lg shadow-cyan-500/20 z-[9999] animate-border">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 py-4 flex justify-between items-center ">
-          {/* Logo */}
+      <nav className="sticky top-0 w-full bg-black border-b-[3px] border-cyan-500/50 shadow-lg shadow-cyan-500/20 z-[9999]">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 py-4 flex justify-between items-center">
           <motion.div whileHover={{ scale: 1.05 }} className="flex items-center space-x-3">
             <div className="p-2 bg-gradient-to-tr from-cyan-500 to-purple-600 rounded-lg shadow-lg">
               <Code2 className="text-white" size={28} />
             </div>
-            <h1 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 text-transparent bg-clip-text">
-             
-            </h1>
+            <h1 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 text-transparent bg-clip-text"></h1>
           </motion.div>
 
-          {/* Desktop Menu */}
           <div className="hidden md:flex space-x-6 items-center">
             {navLinks.map((link, index) => (
               <motion.div key={index} className="relative group" whileHover={{ scale: 1.1 }}>
-                <Link to={link.path} className="flex items-center text-gray-300 hover:text-cyan-400 transition-all duration-300">
+                <Link
+                  to={link.path}
+                  className="flex items-center text-gray-300 hover:text-cyan-400 transition-all duration-300"
+                >
                   <span className="mr-2 opacity-70 group-hover:opacity-100">{link.icon}</span>
                   <span className="font-medium">{link.name}</span>
                 </Link>
-
-                {/* Animated Underline */}
                 <motion.div
                   className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-cyan-500 to-purple-500 opacity-0 group-hover:opacity-100"
                   initial={{ width: "0%" }}
@@ -92,15 +107,10 @@ const Navbar = () => {
               </motion.div>
             ))}
 
-            {/* Auth Button */}
             <motion.div whileHover={{ scale: 1.05 }}>
               {isAuthenticated ? (
                 <button
-                onClick={() => {
-                  toggleAuth();
-                  handleLogout();
-                }}
-                
+                  onClick={handleLogout}
                   className="ml-4 px-6 py-2 bg-gradient-to-r from-red-600 to-cyan-500 rounded-full text-white font-semibold flex items-center hover:shadow-lg transition-all"
                 >
                   <LogOut className="mr-2" size={18} />
@@ -118,7 +128,6 @@ const Navbar = () => {
             </motion.div>
           </div>
 
-          {/* Mobile Menu Button */}
           <motion.button
             onClick={() => setIsOpen(!isOpen)}
             whileTap={{ scale: 0.95 }}
@@ -129,7 +138,6 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -158,12 +166,11 @@ const Navbar = () => {
               </motion.div>
             ))}
 
-            {/* Mobile Auth Button */}
             <div className="w-full px-8 mt-6 border-t border-gray-800 pt-4">
               {isAuthenticated ? (
                 <button
                   onClick={() => {
-                    toggleAuth();
+                    handleLogout();
                     setIsOpen(false);
                   }}
                   className="w-full px-6 py-3 bg-gradient-to-r from-red-600 to-cyan-500 rounded-full text-white font-semibold flex items-center justify-center"

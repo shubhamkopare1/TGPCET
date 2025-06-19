@@ -13,7 +13,7 @@ const events = [
     entryFees: "₹300 per group (Max. 5 or 6 members) ",
     
     prizePool: "₹50,000+",
-    registrationLink: "https://forms.gle/Di2Gcrgf5UAirkTV6",
+    registrationLink: "/ParticipantForm",
     domains: [
       "AI/ML & Emerging Trends",
       "Cyber Security & Privacy",

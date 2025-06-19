@@ -19,6 +19,8 @@ import HackathonForm from "./pages/HackathonForm";
 // import Admin from "./pages/Admin";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import ParticipantForm from "./pages/ParticipateForm";
+import ParticipantsList from "./pages/ParticipantsList";
 function App() {
   return (
     <>
@@ -41,6 +43,9 @@ function App() {
         <Route path="/register" element={<RegisterForm/>} />
         <Route path="/repos" element={<ProblemList/>} />
         <Route path="/hackhathonForm" element={<HackathonForm/>} />
+        <Route path="/ParticipantForm" element={<ParticipantForm/>} />
+        <Route path="/Participantlist" element={<ParticipantsList/>} />
+       
       </Routes>
   
       <Footer/>

@@ -23,7 +23,6 @@ const ProblemList = () => {
       const res = await axios.get("https://techkruti-backend.onrender.com/api/problem-form/getTeamData", {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
-      console.log(res);
       
       setProblems(res.data.data);
       setLoading(false);
