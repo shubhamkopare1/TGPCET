@@ -22,7 +22,9 @@ import ScrollToTop from "./components/ScrollToTop";
 import ParticipantForm from "./pages/ParticipateForm";
 import ParticipantsList from "./pages/ParticipantsList";
 function App() {
+ console.log("hiiii);
   return (
+   
     <>
 
 <CodeBackground id="particles" />
