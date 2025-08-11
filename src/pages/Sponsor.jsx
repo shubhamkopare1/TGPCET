@@ -11,6 +11,7 @@ const sponsors = [
 ];
 
 const Sponsor = () => {
+  console.log("hiiiiiiii);
   return (
     <div className="w-full min-h-screen flex flex-col items-center justify-center bg-gray-900 py-20">
       <h1 className="text-4xl font-bold text-white mb-10 text-center">
