@@ -30,7 +30,7 @@ const events = [
 
 const Upcoming = () => {
   const navigate = useNavigate(); // ✅ Initialize navigation function
-
+console.log("hiiiiiiiii")
   return (
     <div className="w-full flex flex-col items-center  min-h-screen bg-transparent  p-8">
       <h1 className="text-[1.8rem] sm:text-[1.9rem] md:text-[2rem] pb-3 lg:text-[2.2rem] font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-red-400">
